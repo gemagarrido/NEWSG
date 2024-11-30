@@ -5,12 +5,17 @@
 <head>
     <title>Segovia</title>
     <meta charset="utf-8">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/c3fd22b8e3.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- MI CSS  -->
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -32,12 +37,12 @@
             <p>El encanto de lo eterno</p>
             <a href="#" class="btn-area">Learn More</a>
         </div>
-        <div class="section-two p-125">
+        <div data-aos="fade-right" class="section-two p-125">
             <h1>Una ciudad con encanto</h1>
             <p>Bienvenidos a Segovia, una ciudad que combina siglos de historia con una belleza natural inigualable. Declarada Patrimonio de la Humanidad por la UNESCO, Segovia es un destino donde cada rincón cuenta una historia. Desde su majestuoso Acueducto hasta el imponente Alcázar, Segovia invita a descubrir su riqueza cultural, su arquitectura única y la calidez de sus tradiciones. ¡Segovia te espera con los brazos abiertos!</p>
         </div>
 
-        <div class="slider">
+        <div data-aos="zoom-in" class="slider">
             <div class="item">
                 <h1>En tren</h1>
                 <p>La alta velocidad permite llegar desde Madrid o Valladolid en solo 30 minutos hasta la estación Segovia-Guiomar, a 6 km del centro. También hay trenes regionales que conectan con Madrid, aunque el recorrido dura 2 horas.</p>
@@ -63,9 +68,11 @@
             <button id="prev"><</button>
         </div>
 
+        
+
     
         <div id="about" class="section-one p-125" style="background-image: url(img/homepage.jpg);">
-            <h1>Sobre Segovia</h1>
+            <h1 data-aos="fade-right">Sobre Segovia</h1>
         </div>
         
         <div class="section-history p-125">
@@ -73,7 +80,7 @@
             <p>Explora los hitos más importantes que han dado forma a esta ciudad Patrimonio de la Humanidad</p>
         </div>
 
-        <div class="timeline">
+        <div data-aos="fade-down" class="timeline">
 
             <div class="container left-container">
                 <img src="img/icon-acueducto.png" alt="">
@@ -156,6 +163,10 @@
 
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- AOS JS  -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <!-- MY SCRIPT  -->
     <script src="js/script.js"></script>
 

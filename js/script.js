@@ -68,5 +68,15 @@ $('#prev').on('click', function () {
 });
 
 
-// TIMELINE 
+// AOS
+
+$(document).ready(function () {
+    // Inicialización de AOS
+    AOS.init({
+        duration: 1500,
+    });
+});
+
+
+
 
