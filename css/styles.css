@@ -13,6 +13,7 @@
 :root {
     --white: #ffffff;
     --black: #000000;
+    --grey: #555;
 }
 
 * {
@@ -29,6 +30,7 @@ body {
     line-height: 1.5;
     font-family: "Poppins", sans-serif;
     text-align: center;
+    overflow-x: hidden;
 }
 
 /* MENU  */
@@ -246,6 +248,7 @@ h1:hover + .cursor {
 #prev:hover,
 #next:hover{
     opacity: 1;
+    cursor: pointer;
 }
 
 
@@ -259,6 +262,7 @@ h1:hover + .cursor {
     /* max-width: 1200px;
     margin: 100px auto; */
     background-color: var(--black);
+    padding: 50px;
 }
 
 .container {
@@ -348,7 +352,7 @@ h1:hover + .cursor {
     position: absolute;
     width: 6px;
     height: 100%;
-    background: #fff;
+    background: var(--white);
     top: 0;
     left: 50%;
     margin-left: -3px;
@@ -373,7 +377,7 @@ h1:hover + .cursor {
     z-index: 10;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-left: 15px solid #fff;
+    border-left: 15px solid --white;
     right: -15px;
 }
 
@@ -385,9 +389,303 @@ h1:hover + .cursor {
     z-index: 10;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-right: 15px solid #fff;
+    border-right: 15px solid --white;
     left: -15px;
 }
+
+
+/* SLIDESHOW  */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 100px;
+}
+
+.slides {
+    display: flex;
+    /* transition: opacity 0.5s ease-in-out; */
+}
+
+.slide {
+    min-width: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+}
+
+
+
+/* GALERIA CULTURA  */
+
+
+.gallery-cultura img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.gallery-cultura img:hover {
+    transform: scale(1.1);
+}
+
+.gallery-cultura {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-auto-rows: 200px;
+    gap: 20px;
+}
+
+/* Estilos para el modal */
+.modal-carrusel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-carrusel .current-image {
+    max-width: 90%;
+    max-height: 80%;
+}
+
+.modal-carrusel .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: var(--white);
+    cursor: pointer;
+    user-select: none;
+}
+
+.modal-carrusel .left-arrow {
+    left: 5%;
+}
+
+.modal-carrusel .right-arrow {
+    right: 5%;
+}
+
+.modal-carrusel .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: var(--white);
+    cursor: pointer;
+}
+
+
+
+/* GRAFICOS  */
+
+.dataicons {
+    display: flex;
+    justify-content: space-around; 
+    margin: 200px 0;
+}
+
+.dataicons figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+}
+
+.dataicons figure i {
+    font-size: 6rem; 
+    color: var(--grey); 
+    transition: transform 0.3s ease, color 0.3s ease; 
+}
+
+.dataicons figure:hover i {
+    color: #1ea6d8; 
+    transform: scale(1.1); 
+}
+
+.dataicons figcaption {
+    margin-top: 10px;
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.modal .close {
+    position: absolute;
+    top: 30px;
+    right: 100px;
+    font-size: 3.5em;
+    cursor: pointer;
+    color: var(--white);
+}
+
+
+
+/* LISTADO DE EVENTOS */
+
+.eventos-container {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+
+}
+
+.eventos-lista {
+    list-style-type: none;
+    padding: 0;
+}
+
+.evento {
+    background-color: #e8e8e8;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.evento:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.evento h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.evento p {
+    margin: 5px 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.evento strong {
+    font-weight: bold;
+}
+
+.evento p:nth-child(2) {
+    margin-top: 10px;
+}
+
+
+
+
+
+/* OPINIONES  */
+
+.opinions-container {
+    width: 100%;
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos de la lista de opiniones */
+.opinions-list {
+    margin-bottom: 20px;
+}
+
+.opinion {
+    background-color: #e8e8e8;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.opinion-text {
+    font-style: italic;
+    color: var(--black);
+}
+
+.opinion-author {
+    text-align: right;
+    font-weight: bold;
+    color: var(--grey);
+}
+
+/* Estilos del formulario */
+.opinion-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.opinion-form input, .opinion-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.opinion-form button {
+    padding: 10px 20px;
+    background-color: var(--grey);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.opinion-form button:hover {
+    background-color: #e8e8e8;
+    color: var(--black);
+}
+
+/* Mensaje de éxito */
+.message {
+    text-align: center;
+    background-color: #e8e8e8;
+    color: var(--black);
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
 
 /* GALLERY  */
 
@@ -414,3 +712,5 @@ h1:hover + .cursor {
 .fondogallery {
     background-color: var(--black);
 }
+
+

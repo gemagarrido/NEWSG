@@ -1,164 +1,209 @@
-JAVASCRIPT ANTIGUO 
+APARTADO DE DATOS Y GRAFICOS 
 
-function abrirMenu() {
-    "use strict";
-    console.log("abrir");
-    /* Cambio en el color de fondo y en el tamaño*/
-    var menu = document.getElementById("menu");
-    menu.style.backgroundColor = "rgba(255, 255, 255, 0.8)";
-    menu.style.width = "100%";
-    menu.style.height = "100%";
-    /* Se muestran las opciones */
-    var opciones = document.getElementById("menu").firstElementChild.children;
-    for (var i = 1; i < opciones.length; i = i + 1) {
-        opciones[i].style.display = "block";
-    }
-}
+        <section>
+            <div id="about" class="section-one p-125" style="background-image: url(img/homepage.jpg);">
+                <h1 data-aos="fade-right">Segovia en datos</h1>
+            </div>
+            <div class="dataicons">
+                <a href="#modal-clima">
+                    <figure>
+                        <i class="fa-solid fa-cloud"></i>
+                        <!-- <img src="img/acuarelas.jpg" alt="Caja de acuarelas"> -->
+                    </figure>
+                </a>
+                <a href="#modal-poblacion">
+                    <figure>
+                        <i class="fa-solid fa-users"></i>
+                        <!-- <img src="img/pasteles.jpg" alt="Caja de pasteles al óleo"> -->
+                    </figure>
+                </a>
+                <a href="#modal-gastronomia">
+                    <figure>
+                        <i class="fa-solid fa-utensils"></i>
+                        <!-- <img src="img/acrilico.jpg" alt="Caja de tubos de pintura acrílica"> -->
+                    </figure>
+                </a>
+            </div>
 
-function cerrarMenu() {
-    "use strict";
-    console.log("cerrar");
-    /* Cambio en el color de fondo y en el tamaño*/
-    var menu = document.getElementById("menu");
-    menu.style.backgroundColor = "transparent";
-    menu.style.width = "auto";
-    menu.style.height = "auto";
-    /* Se ocultan las opciones */
-    var opciones = document.getElementById("menu").firstElementChild.children;
-    for (var i = 1; i < opciones.length; i = i + 1) {
-        opciones[i].style.display = "none";
-    }
-}
-
-function menu() {
-    "use strict";
-    if (document.getElementById("menu").firstElementChild.children[1].style.display === "block") {
-        cerrarMenu();
-    } else {
-        abrirMenu();
-    }
-}
-
-function cambiaFoto(numero) {
-    "use strict";
-    var imagen = document.getElementsByClassName("galeria")[0].children[numero - 1].firstElementChild;
-    var ruta_antigua = imagen.getAttribute("src");
-    var ruta_nueva = ruta_antigua.replace("flor", "fruto");
-    imagen.setAttribute("src", ruta_nueva);
-}
-
-function restauraFoto(numero) {
-    "use strict";
-    var imagen = document.getElementsByClassName("galeria")[0].children[numero - 1].firstElementChild;
-    var ruta_antigua = imagen.getAttribute("src");
-    var ruta_nueva = ruta_antigua.replace("fruto", "flor");
-    imagen.setAttribute("src", ruta_nueva);
-}
-
-
-// BUCLES DE JS
-//Para generar un bucle sobre un array podemos usar la función built-in de JS llamada forEach()
-
-let figures = document.querySelectorAll(".galeria figure");
-console.log(figures);
-
-//La funcion forEach() tiene dos parametros que podemos activar. 
-//El primer parametro me permite acceder al elementos del array de la vuelta
-//El segundo parametro me da el numero de vuelta (es decir el índice)
-figures.forEach(function(figure, index){
-    // console.log(figure);
-    // console.log(index);
-
-    figure.addEventListener("mouseover", function(){
-        console.log("over");
-        cambiaFoto(index + 1);
-        
-    })
-
-    figure.addEventListener("mouseout", function(){
-        console.log("out");
-        restauraFoto(index + 1);
-        
-    })
-    
-});
-
-
-
-
-// Seleccionamos los enlaces <a> del menu y los guardamos en una variable (esto guardará un array) esta variable se puede llamar links
-
-//Recorremos el array de esa variable links con la funcion forEach() 
-
-//Dentro de la funcion anonima del forEach() le asignamos un evento click a cada uno de los links (cada link individual se puede llamar link como parametro)
-
-//Dentro del evento click se llamará a la función para cerrar el menu
-
-//NOTA: Borrar los eventos onclick del HTML
-
-let links = document.querySelectorAll("#menu a")
-
-links.onClick(function(link){
-
-
-    link.addEventListener("click", function(){
-        cerrarMenu();
-        
-    })
-    
-});
-
-
-
-
-
-<section class="timeline">
-            <ul>
-                <li>
+            <div class="modal" id="modal-clima">
+                <figure>
                     <div>
-                        <time>Siglo I d.C.</time> Los romanos construyen el icónico Acueducto, una obra maestra de ingeniería que abasteció de agua a la ciudad durante siglos.
+                        <canvas id="barras"></canvas>
                     </div>
-                </li>
-                
-                <li>
+                    <figcaption>
+                        <h3>Acuarelas</h3>
+                        <p>Los colores utilizados son más o menos transparentes según la cantidad de agua con la que se mezcla, y a veces dejan ver el fondo del papel, que suele ser blanco y que actúa como un verdadero tono.</p>
+                        <p>El producto utilizado para pintar se compone de pigmentos aglutinados con goma arábiga o miel. La acuarela se utiliza pintando por capas transparentes, con el fin de conseguir la máxima brillantez y soltura en la composición que se realiza.</p>
+                    </figcaption>
+                </figure>
+                <p><a href="#">X</a></p>
+            </div>
+            <div class="modal" id="modal-poblacion">
+                <figure>
                     <div>
-                        <time>Siglo VIII</time> Durante la ocupación musulmana, Segovia fue temporalmente abandonada, aunque su muralla y ubicación estratégica permanecieron intactas.
+                        <canvas id="tarta"></canvas>
                     </div>
-                </li>
-                
-                <li>
+                    <figcaption>
+                        <h3>Pasteles</h3>
+                        <p>El lápiz pastel es un instrumento de dibujo cuya mina es una pasta hecha con pigmentos secos moldeados en una barra que se cohesiona mediante una goma o resina. Los lápices carecen de los aglutinantes que poseen otras técnicas como el lápiz de carbón. Esto hace que sea tremendamente difícil de adherir a la superficie pictórica, que suele ser un papel poroso. El medio de asegurarla es mediante el empleo un fijador , pero le resta brillo al pastel y falsea los colores.</p>
+                        <p>Es muy apreciado por la delicada gama de colores que ofrece y por una característica otorgada por su propia fragilidad: al carecer de aglutinantes, el color de la barra es exactamente el mismo que obtendrá el artista tras su aplicación. Además, no necesita ser preparada con anticipación y tampoco requiere de tiempo de secado. Esto permite trabajar a gran velocidad con trazos espontáneos y directos.</p>
+                    </figcaption>
+                </figure>
+                <p><a href="#">X</a></p>
+            </div>
+            <div class="modal" id="modal-gastronomia">
+                <figure>
                     <div>
-                        <time>Siglo XI</time> Alfonso VI reconquista Segovia y promueve su repoblación. Se construyen la muralla y las primeras iglesias románicas, sentando las bases de su legado medieval.
+                        <canvas id="linea"></canvas>
                     </div>
-                </li>
-
-                <li>
-                    <div>
-                        <time>Siglo XIII</time> El Alcázar se convierte en una de las principales residencias reales. Desde sus muros, se gestionaron importantes decisiones de la monarquía castellana.
-                    </div>
-                </li>
-
-                <li>
-                    <div>
-                        <time>1520</time> Segovia se une a la Guerra de las Comunidades contra Carlos I, destacándose como uno de los focos de resistencia más importantes en Castilla.
-                    </div>
-                </li>
-
-                <li>
-                    <div>
-                        <time>1525</time> Comienza la construcción de la actual Catedral de Segovia tras la destrucción de la anterior durante la revuelta comunera. Su estilo gótico tardío es una joya arquitectónica.
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <time>1764</time> Carlos III impulsa la fundación de la Real Fábrica de Cristales de La Granja, convirtiendo a esta localidad en un referente de la artesanía y la industria.
-                    </div>
-                </li>
-
-                <li>
-                    <div>
-                        <time>1985</time> La UNESCO declara el casco histórico de Segovia y su Acueducto como Patrimonio de la Humanidad, reconociendo su importancia histórica y cultural.
-                    </div>
-                </li>
-            </ul>
+                    <figcaption>
+                        <h3>Pintura acrílica</h3>
+                        <p>Clase de pintura que contiene un material plastificado, pintura de secado rápido, en la que los pigmentos están contenidos en una emulsión de un polímero acrílico. Aunque solubles en agua, una vez que secan son resistentes a la misma. Destaca especialmente por la rapidez del secado. Asimismo, al secar se modifica ligeramente el tono, más que en el óleo.</p>
+                        <p>"Látex" es la denominación común de los polímeros obtenidos mediante polimerización en emulsión, y son dispersiones coloidales de partículas muy pequeñas de polímero en un medio continuo. Los látex pueden ser aplicados en la fabricación de pinturas de arquitectura, pero también en adhesivos para madera (cola vinílica), pinturas para papel o como aditivos para cemento y hormigón.</p>
+                    </figcaption>
+                </figure>
+                <p><a href="#">X</a></p>
+            </div>
         </section>
+
+
+
+
+.dataicons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dataicons > a {
+    width: 25%;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition-duration: 0.5s;
+}
+
+.modal > p > a {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-top: 2em;
+    color: grey;
+    text-decoration: none;
+}
+
+.modal > figure {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal > figure > canvas,
+.modal > figure > figcaption {
+    width: 40%;
+}
+
+#modal-acuarelas:target,
+#modal-pasteles:target,
+#modal-acrilico:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+
+// GRAFICOS 
+
+//  * Función para generar el gráfico de barras
+//  */
+function cargaGraficoBarras() {
+    var datos = {
+        labels: ["Google Chrome", "Edge/IE", "Firefox", "Safari", "Opera", "Otros"],
+        datasets: [
+            {
+                label: "%",
+                backgroundColor: "#D81E5B",
+                data: [81.1, 7.6, 5.2, 3.4, 1.7, 1],
+            },
+        ],
+    };
+    var grafico = $("#barras");
+    new Chart(grafico, {
+        type: "bar",
+        data: datos,
+    });
+}
+
+/**
+ * Función para generar el gráfico de tarta
+ */
+function cargaGraficoTarta() {
+    var datos = {
+        labels: ["Google Chrome", "Edge/IE", "Firefox", "Safari", "Opera", "Otros"],
+        datasets: [
+            {
+                label: "%",
+                backgroundColor: ["#D81E5B", "#F76C9A", "#F52268", "#C21B53", "#75344A", "black"],
+                data: [81.1, 7.6, 5.2, 3.4, 1.7, 1],
+            },
+        ],
+    };
+    var grafico = $("#tarta");
+    new Chart(grafico, {
+        type: "pie",
+        data: datos,
+        options: {
+            plugins: {
+                title: {
+                    position: "bottom",
+                    display: true,
+                    text: "Navegadores utilizados para acceder a W3Schools en agosto de 2024",
+                    padding: {
+                        top: 30,
+                    },
+                },
+            },
+        },
+    });
+}
+
+/**
+ * Función para generar el gráfico de línea
+ */
+function cargaGraficoLinea() {
+    var datos = {
+        labels: ["Google Chrome", "Edge/IE", "Firefox", "Safari", "Opera", "Otros"],
+        datasets: [
+            {
+                label: "%",
+                backgroundColor: "#D81E5B",
+                data: [81.1, 7.6, 5.2, 3.4, 1.7, 1],
+            },
+        ],
+    };
+    var grafico = $("#linea");
+    new Chart(grafico, {
+        type: "line",
+        data: datos,
+    });
+}
+
+$(document).ready(function () {
+    "use strict";
+    cargaGraficoBarras();
+    cargaGraficoTarta();
+    cargaGraficoLinea();
+});
