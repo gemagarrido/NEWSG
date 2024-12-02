@@ -30,7 +30,64 @@
             <div class="cursor"></div>
             <p>Visita el Encanto</p>
         </div>
+
+        <div class="where-container">
+            <div class="where-text">
+                <h2>¿Dónde puedes encontrarnos?</h2>
+                <p>Para más información puedes visitarnos en el Ayuntamiento de Segovia en la Plaza Mayor, 1 40001, Segovia, llamar al 921 41 98 00, o dejar la consulta en el formulario. También puedes suscribirte a nuestra Newsletter para obtener contenido exclusivo sobre la ciudad.</p>
+            </div>
+            <div class="where-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3013.41186032487!2d-4.126803223718234!3d40.95055547135869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd413ec38d2a2131%3A0x79a5abf6983e8bc1!2sAyuntamiento%20de%20Segovia!5e0!3m2!1ses!2ses!4v1733164221532!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="contact-form">
+            <h1>Envíanos tu consulta</h1>
+            <form>
+                <label for="name">Tu Nombre:</label>
+                <input type="text" id="name" name="name" required placeholder="Escribe tu nombre">
+                <label for="name">Tu Correo electrónico:</label>
+                <input type="text" id="email" name="email" required placeholder="Escribe tu correo electrónico">
+    
+                <label for="opinion">Tu Consulta:</label>
+                <textarea id="consulta" name="consulta" rows="4" required placeholder="Escribe tu consulta aquí"></textarea>
+    
+                <button type="submit">Enviar consulta</button>
+            </form>
+            <div class="message" style="display: none;">
+                <p>¡Gracias por tu opinión! Se ha añadido a la lista.</p>
+            </div>
+        </div>
+
+        <a class="ir-arriba"  javascript:void(0) title="Volver arriba">
+            <span class="fa-stack">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-arrow-up fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
     </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="menu-footer">
+                <ul>
+                    <li><a href="index.html">home</a></li>
+                    <li><a href="#about">info</a></li>
+                    <li><a href="gallery.html">galería</a></li>
+                    <li><a href="contact.html">contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-form-container">
+                <h2>Suscríbete a nuestra Newsletter</h2>
+                <form class="footer-form">
+                    <input type="text" id="name" name="name" required placeholder="Escribe tu nombre">
+                    <input type="text" id="surname" name="surname" required placeholder="Escribe tus apellidos">
+                    <input type="text" id="email" name="email" required placeholder="Escribe tu correo electrónico">
+
+                    <button type="submit">Suscribirme</button>
+                </form>
+            </div>
+        </div>
+    </footer>
 
         
     <!-- JQUERY  -->

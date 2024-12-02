@@ -11,8 +11,8 @@
 }
 
 :root {
-    --white: #ffffff;
-    --black: #000000;
+    --white: #ececec;
+    --black: #151515;
     --grey: #555;
 }
 
@@ -33,7 +33,9 @@ body {
     overflow-x: hidden;
 }
 
-/* MENU  */
+
+
+/* ---------------MENU------------ */
 header {
     width: 100%;
     position: fixed;
@@ -90,11 +92,41 @@ header.sticky::before {
     color: var(--black);
 }
 
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-icon {
+    width: 25px;
+    height: 3px;
+    background: var(--white);
+    position: relative;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: '';
+    width: 25px;
+    height: 3px;
+    background: var(--white);
+    position: absolute;
+    left: 0;
+}
+
+.menu-icon::before {
+    top: -8px;
+}
+
+.menu-icon::after {
+    top: 8px;
+}
 
 
 
-
-/* CABECERA */
+/* ---------------CABECERA-------------- */
 
 .p-225 {
     padding: 225px 0;
@@ -105,10 +137,10 @@ header.sticky::before {
 }
 
 .btn-area {
-    color: #fff;
+    color: var(--white);
     text-decoration: none;
     display: inline-block;
-    border: 2px solid #fff;
+    border: 2px solid --white;
     margin-top: 15px;
     padding: 10px 20px;
 }
@@ -118,7 +150,7 @@ header.sticky::before {
     -webkit-background-size: cover;
     background-size: cover;
     background-attachment: fixed;
-    color: #fff;
+    color: var(--white);
     position: relative;
     z-index: 1;
 }
@@ -179,13 +211,13 @@ header.sticky::before {
 
 
 
-/* EFECTO CURSOR  */
+/* -----------EFECTO CURSOR-------------  */
 
 .cursor {
     display: inline-block;
     width: 30px;
     height: 30px;
-    background-color: #ffffff;
+    background-color: var(--white);
     border-radius: 50%;
     position: fixed;
     top: 0;
@@ -200,7 +232,7 @@ h1:hover + .cursor {
 }
 
 
-/* SLIDER TRANSPORTE  */
+/* ----------------SLIDER TRANSPORTE---------  */
 
 .slider{
     position: relative;
@@ -214,7 +246,7 @@ h1:hover + .cursor {
     width: 320px;
     height: 320px;
     text-align: justify;
-    background-color: #fff;
+    background-color: var(--white);
     border: var(--black) 1px solid;
     border-radius: 10px;
     padding: 20px;
@@ -255,12 +287,10 @@ h1:hover + .cursor {
 
 
 
-/* TIMELINE */
+/* ---------TIMELINE---------------- */
 
 .timeline {
     position: relative;
-    /* max-width: 1200px;
-    margin: 100px auto; */
     background-color: var(--black);
     padding: 50px;
 }
@@ -356,7 +386,6 @@ h1:hover + .cursor {
     top: 0;
     left: 50%;
     margin-left: -3px;
-    /* z-index: -2; */
     animation: moveline 6s linear forwards;
 }
 
@@ -394,7 +423,7 @@ h1:hover + .cursor {
 }
 
 
-/* SLIDESHOW  */
+/* -------------SLIDESHOW---------------  */
 .slideshow-container {
     position: relative;
     width: 100%;
@@ -404,7 +433,6 @@ h1:hover + .cursor {
 
 .slides {
     display: flex;
-    /* transition: opacity 0.5s ease-in-out; */
 }
 
 .slide {
@@ -418,7 +446,7 @@ h1:hover + .cursor {
 
 
 
-/* GALERIA CULTURA  */
+/* -------------------GALERIA CULTURA---------------  */
 
 
 .gallery-cultura img {
@@ -444,7 +472,7 @@ h1:hover + .cursor {
     gap: 20px;
 }
 
-/* Estilos para el modal */
+/* ---ventana modal galeria cultura ---- */
 .modal-carrusel {
     position: fixed;
     top: 0;
@@ -492,7 +520,7 @@ h1:hover + .cursor {
 
 
 
-/* GRAFICOS  */
+/* ------------GRAFICOS------------  */
 
 .dataicons {
     display: flex;
@@ -558,7 +586,7 @@ h1:hover + .cursor {
 
 
 
-/* LISTADO DE EVENTOS */
+/* --------------LISTADO DE EVENTOS------------- */
 
 .eventos-container {
     background-color: var(--white);
@@ -575,7 +603,7 @@ h1:hover + .cursor {
 }
 
 .evento {
-    background-color: #e8e8e8;
+    background-color: #cfcfcf;
     margin-bottom: 20px;
     padding: 15px;
     border-radius: 10px;
@@ -611,7 +639,7 @@ h1:hover + .cursor {
 
 
 
-/* OPINIONES  */
+/* ------------OPINIONES-------------  */
 
 .opinions-container {
     width: 100%;
@@ -621,13 +649,12 @@ h1:hover + .cursor {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos de la lista de opiniones */
 .opinions-list {
     margin-bottom: 20px;
 }
 
 .opinion {
-    background-color: #e8e8e8;
+    background-color: #cfcfcf;
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 10px;
@@ -645,7 +672,7 @@ h1:hover + .cursor {
     color: var(--grey);
 }
 
-/* Estilos del formulario */
+/*-----formulario opiniones---- */
 .opinion-form {
     display: flex;
     flex-direction: column;
@@ -657,14 +684,14 @@ h1:hover + .cursor {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid --grey;
     font-size: 16px;
 }
 
 .opinion-form button {
     padding: 10px 20px;
     background-color: var(--grey);
-    color: white;
+    color: var(--white);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -676,7 +703,6 @@ h1:hover + .cursor {
     color: var(--black);
 }
 
-/* Mensaje de éxito */
 .message {
     text-align: center;
     background-color: #e8e8e8;
@@ -686,8 +712,100 @@ h1:hover + .cursor {
     margin-top: 20px;
 }
 
+/*-----------FLECHA HACIA ARRIBA-----------*/
+.ir-arriba{
+    display:none;
+    background-repeat:no-repeat;
+    font-size:20px;
+    color:rgb(137, 25, 25);
+    cursor:pointer;
+    position:fixed;
+    bottom:10px;
+    right:10px;
+    z-index:2;
+}
 
-/* GALLERY  */
+
+
+/* -------------------FOOTER---------------  */
+
+footer {
+    background-color: var(--black); 
+    color: var(--white); 
+    padding: 80px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start; 
+    gap: 40px; 
+    flex-wrap: wrap; 
+}
+
+.menu-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-footer ul li {
+    margin-bottom: 30px; 
+    text-transform: uppercase;
+}
+
+.menu-footer ul li a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.menu-footer ul li a:hover {
+    color: var(--grey);
+}
+
+.footer-form-container h2 {
+    margin-bottom: 15px; 
+    font-size: 18px;
+}
+
+.footer-form {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+}
+
+.footer-form input {
+    padding: 10px;
+    border: 1px solid --white; 
+    background-color: var(--white); 
+    font-size: 14px;
+    border-radius: 15px;
+}
+
+.footer-form input::placeholder {
+    color: var(--grey); 
+}
+
+.footer-form button {
+    padding: 10px;
+    background-color: var(--grey);
+    color: var(--white); 
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer-form button:hover {
+    background-color: gray; 
+}
+
+
+/* --------------GALLERY-----------  */
 
 .row {
     box-sizing: border-box;
@@ -714,3 +832,269 @@ h1:hover + .cursor {
 }
 
 
+/* ------------CONTACTO--------------  */
+
+.where-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 100px;
+    color: var(--white);
+    padding: 100px;
+    flex-wrap: wrap; 
+}
+
+.where-text {
+    min-width: 300px;
+}
+
+.where-text h2 {
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+.where-text p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.where-map {
+    flex: 1;
+    height: 500px;
+}
+
+.where-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 5px;
+}
+
+.contact-form {
+    padding: 20px;
+    color: var(--white);
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 900px; 
+    text-align: left;
+}
+
+.contact-form h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid --white;
+    background-color: var(--white); 
+    color: var(--grey);
+    border-radius: 15px;
+    box-sizing: border-box; 
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: gray;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: var(--white); 
+    color: var(--black); 
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: gray; 
+    color: white; 
+}
+
+
+
+
+
+/* -----------MEDIA QUERIES----------- */
+
+
+
+/* Small phone: 0-480px */
+@media (max-width: 480px) {
+    .section-one h1 {
+        font-size: 60px;
+    }
+
+    .section-one p {
+        font-size: 16px;
+    }
+
+    .gallery-cultura {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline {
+        padding: 20px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .left-container,
+    .right-container {
+        left: 0;
+    }
+
+    .timeline::after {
+        left: 20px;
+    }
+
+    .left-container-arrow {
+        display: none;
+    }
+
+    .right-container-arrow {
+        display: none;
+    }
+
+    .gallery-cultura {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-footer,
+    .footer-form-container {
+        width: 100%;
+    }
+}
+
+/* Tablet, large phone: 481-768px */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: var(--black);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+    }
+
+    .menu li {
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu.open {
+        display: flex;
+    }
+
+
+    .gallery-cultura {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .timeline {
+        padding: 40px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .left-container,
+    .right-container {
+        left: 0;
+    }
+
+    .timeline::after {
+        left: 20px;
+    }
+
+    .dataicons {
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-footer,
+    .footer-form-container {
+        width: 100%;
+    }
+}
+
+/* Laptop, large tablet: 769-1279px */
+@media (min-width: 769px) and (max-width: 1279px) {
+    .gallery-cultura {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .timeline {
+        padding: 50px;
+    }
+
+    .container {
+        width: 50%;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+/* Large Desktops: 1280px and up */
+/* @media (min-width: 1280px) {
+    .gallery-cultura {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .timeline {
+        padding: 60px;
+    }
+
+    .container {
+        width: 50%;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+} */
