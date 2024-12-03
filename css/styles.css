@@ -14,6 +14,7 @@
     --white: #ececec;
     --black: #151515;
     --grey: #555;
+    --accent-color: #891919;
 }
 
 * {
@@ -220,7 +221,7 @@ h1:hover + .cursor {
     border-radius: 10px;
     padding: 20px;
     transition:  0.5s;
-    left: calc(50% - 110px);
+    left: calc(50% - 160px);
     top: 0;
 }
 
@@ -270,6 +271,7 @@ h1:hover + .cursor {
     width: 50%;
     animation: movedown 1s linear forwards;
     opacity: 0;
+    margin: 1px;
 }
 
 @keyframes movedown {
@@ -288,31 +290,31 @@ h1:hover + .cursor {
 }
 
 .container:nth-child(2) {
-    animation-delay: 1s;
+    animation-delay: 0.5s;
 }
 
 .container:nth-child(3) {
-    animation-delay: 2s;
+    animation-delay: 1s;
 }
 
 .container:nth-child(4) {
-    animation-delay: 3s;
+    animation-delay: 1.5s;
 }
 
 .container:nth-child(5) {
-    animation-delay: 4s;
+    animation-delay: 2s;
 }
 
 .container:nth-child(6) {
-    animation-delay: 5s;
+    animation-delay: 2.5s;
 }
 
 .container:nth-child(7) {
-    animation-delay: 6s;
+    animation-delay: 3s;
 }
 
 .container:nth-child(8) {
-    animation-delay: 7s;
+    animation-delay: 3.5s;
 }
 
 .text-box {
@@ -320,7 +322,7 @@ h1:hover + .cursor {
     position: relative;
     border-radius: 5px;
     font-size: 15px;
-    background-color: var(--white);
+    background-color: white;
     color: var(--black);
 }
 
@@ -351,11 +353,11 @@ h1:hover + .cursor {
     position: absolute;
     width: 6px;
     height: 100%;
-    background: var(--white);
+    background: white;
     top: 0;
     left: 50%;
     margin-left: -3px;
-    animation: moveline 6s linear forwards;
+    animation: moveline 3s linear forwards;
 }
 
 @keyframes moveline {
@@ -521,7 +523,7 @@ h1:hover + .cursor {
 }
 
 .dataicons figure:hover i {
-    color: #1ea6d8; 
+    color: var(--accent-color); 
     transform: scale(1.1); 
 }
 
@@ -569,7 +571,6 @@ h1:hover + .cursor {
 /* --------------LISTADO DE EVENTOS------------- */
 
 .eventos-container {
-    background-color: var(--white);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 20px;
@@ -580,14 +581,15 @@ h1:hover + .cursor {
 .eventos-lista {
     list-style-type: none;
     padding: 0;
+    margin: 25px;
 }
 
 .evento {
-    background-color: #cfcfcf;
     margin-bottom: 20px;
     padding: 15px;
     border-radius: 10px;
     transition: background-color 0.3s ease;
+    border: 2px black solid;
 }
 
 .evento:hover {
@@ -616,6 +618,63 @@ h1:hover + .cursor {
 }
 
 
+/* ----------DIA EN SEGOVIA-------- */
+
+.day {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.day-in-segovia {
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.day-in-segovia h1 {
+    text-align: center;
+    color: var(--black);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.day-in-segovia p {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: var(--grey);
+}
+
+.time-block {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.time-block h2 {
+    flex: 1 1 100%;
+    color: var(--black);
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.time-block p {
+    flex: 1 1 60%;
+    font-size: 1.1em;
+    color: var(--grey);
+    line-height: 1.8;
+}
+
+.time-block a {
+    color: var(--black);
+}
+
+
 
 
 
@@ -623,7 +682,6 @@ h1:hover + .cursor {
 
 .opinions-container {
     width: 100%;
-    background-color: var(--white);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -634,9 +692,9 @@ h1:hover + .cursor {
 }
 
 .opinion {
-    background-color: #cfcfcf;
+    background-color: #f8f8f8;
     padding: 15px;
-    margin-bottom: 15px;
+    margin: 50px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -661,7 +719,7 @@ h1:hover + .cursor {
 }
 
 .opinion-form input, .opinion-form textarea {
-    width: 100%;
+    width: 70%;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid --grey;
@@ -697,7 +755,7 @@ h1:hover + .cursor {
     display:none;
     background-repeat:no-repeat;
     font-size:20px;
-    color:rgb(137, 25, 25);
+    color: var(--accent-color);
     cursor:pointer;
     position:fixed;
     bottom:10px;
@@ -826,6 +884,9 @@ footer {
 
 .where-text {
     min-width: 300px;
+    display: flex;
+    flex: wrap;
+    flex-direction: column;
 }
 
 .where-text h2 {
@@ -834,7 +895,7 @@ footer {
 }
 
 .where-text p {
-    font-size: 16px;
+    font-size: 24px;
     line-height: 1.6;
 }
 
@@ -914,7 +975,7 @@ footer {
 }
 
 
-/* -----validacion de formulario---- */
+/* -----validacion de formularios---- */
 input.error,
 textarea.error {
     border-color: red;
@@ -937,12 +998,11 @@ textarea.valid {
 
 
 
-
 /* -----------MEDIA QUERIES----------- */
 
 
 
-/* Small phone: 0-480px */
+/* Small phone*/
 @media (max-width: 480px) {
     .section-one h1 {
         font-size: 60px;
@@ -998,9 +1058,47 @@ textarea.valid {
     .row {
         margin: 20px;
     }
+
+    .slider {
+        height: auto;
+    }
+
+    .item {
+        width: 80%;
+        height: auto;
+        left: 5%;
+        padding: 15px;
+    }
+
+    #next {
+        top: 50%;
+        right: auto;
+    }
+
+    #prev {
+        top: 50%;
+        right: auto;
+    }
+
+    .where-container {
+        padding: 50px;
+    }
+
+    .where-text h2 {
+        font-size: 26px;
+    }
+
+    .where-text p {
+        font-size: 14px;
+    }
+
+    .where-text {
+        align-items: center;
+        justify-content: center;
+    }
 }
 
-/* Tablet, large phone: 481-768px */
+/* Tablet, large phone*/
 @media (max-width: 768px) {
     .menu {
         display: none;
@@ -1018,11 +1116,15 @@ textarea.valid {
     }
 
     .gallery-cultura {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .timeline {
         padding: 40px;
+    }
+
+    .timeline::after {
+        background-color: var(--black);
     }
 
     .container {
@@ -1034,9 +1136,6 @@ textarea.valid {
         left: 0;
     }
 
-    .timeline::after {
-        left: 20px;
-    }
 
     .dataicons {
         display: flex;
@@ -1058,25 +1157,24 @@ textarea.valid {
         flex: 75%;
     }
 
+    .slider {
+        height: 400px;
+    }
+
+    .item {
+        width: 70%;
+        left: 15%;
+    }
+
+    #prev {
+        left: 40px;
+    }
+
+    #next {
+        right: 40px;
+    }
+
 
 }
 
-/* Laptop, large tablet: 769-1279px */
-@media (min-width: 769px) and (max-width: 1279px) {
-    .gallery-cultura {
-        grid-template-columns: repeat(3, 1fr);
-    }
 
-    .timeline {
-        padding: 50px;
-    }
-
-    .container {
-        width: 50%;
-    }
-
-    .footer-content {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-}

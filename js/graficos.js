@@ -8,7 +8,7 @@ function cargaGraficoBarras() {
         datasets: [
             {
                 label: "Grados",
-                backgroundColor: "#1ea6d8",
+                backgroundColor: "#891919",
                 data: [4, 6, 9, 12, 16, 20, 24, 23, 20, 14, 8, 5],
             },
         ],
@@ -41,7 +41,7 @@ function cargaGraficoTarta() {
         datasets: [
             {
                 label: "%",
-                backgroundColor: ["#1ea6d8", "#2b7a96", "#234b59", "#16252a"],
+                backgroundColor: ["#a74646", "#891919", "#6d0a0a", "#450202"],
                 data: [20, 25, 35, 20],
             },
         ],
@@ -74,7 +74,7 @@ function cargaGraficoLinea() {
         datasets: [
             {
                 label: "%",
-                backgroundColor: "#1ea6d8",
+                backgroundColor: "#891919",
                 data: [60, 55, 70, 78, 80, 85],
             },
         ],
