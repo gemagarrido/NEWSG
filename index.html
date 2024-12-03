@@ -21,10 +21,7 @@
 <body>
     <header>
         <div class="navbar">
-            <button class="menu-toggle" aria-label="Abrir menú">
-                <span class="menu-icon"></span>
-            </button>
-            <ul class="menu">
+            <ul id="menu" class="menu">
                 <li><a href="index.html">home</a></li>
                 <li><a href="#about">Info</a></li>
                 <li><a href="gallery.html">galería</a></li>
@@ -190,7 +187,7 @@
             </div>
             <div class="section-history p-125">
                 <h1>Talento Fresco</h1>
-                <p>La chica Segoviana by @mariasmorato y @lprmagazine</p>
+                <p>La chica Segoviana by <a href="https://www.instagram.com/mariasmorato" target="_blank" rel="noopener noreferrer">@mariasmorato</a> y <a href="https://www.instagram.com/lprmagazine" target="_blank" rel="noopener noreferrer">@lprmagazine</a></p>
             </div>
 
             <div class="gallery-cultura">
@@ -334,8 +331,6 @@
         </div>
 
         <div class="opinions-container">
-    
-            <!-- Lista de opiniones -->
             <div class="opinions-list">
                 <div class="opinion">
                     <p class="opinion-text">"Segovia es una ciudad maravillosa, llena de historia y cultura. El Acueducto es impresionante!"</p>
@@ -352,8 +347,6 @@
             </div>
     
             <h2>¡Añade tu Opinión!</h2>
-    
-            <!-- Formulario de opiniones -->
             <form id="opinion-form" class="opinion-form">
                 <label for="name">Tu Nombre:</label>
                 <input type="text" id="name" name="name" required placeholder="Escribe tu nombre">
@@ -411,8 +404,15 @@
     <!-- CHART JS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!-- MY SCRIPT  -->
+    <!-- MIS SCRIPT  -->
     <script src="js/script.js"></script>
+    <script src="js/carrusel.js"></script>
+    <script src="js/cultura-gallery.js"></script>
+    <script src="js/flecha-arriba.js"></script>
+    <script src="js/graficos.js"></script>
+    <script src="js/modal-data.js"></script>
+    <script src="js/opinion-form"></script>
+    <script src="js/slider-transporte.js"></script>
 
 </body>
 

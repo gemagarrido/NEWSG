@@ -92,37 +92,6 @@ header.sticky::before {
     color: var(--black);
 }
 
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-.menu-icon {
-    width: 25px;
-    height: 3px;
-    background: var(--white);
-    position: relative;
-}
-
-.menu-icon::before,
-.menu-icon::after {
-    content: '';
-    width: 25px;
-    height: 3px;
-    background: var(--white);
-    position: absolute;
-    left: 0;
-}
-
-.menu-icon::before {
-    top: -8px;
-}
-
-.menu-icon::after {
-    top: 8px;
-}
 
 
 
@@ -140,7 +109,7 @@ header.sticky::before {
     color: var(--white);
     text-decoration: none;
     display: inline-block;
-    border: 2px solid --white;
+    border: 2px solid #ececec;
     margin-top: 15px;
     padding: 10px 20px;
 }
@@ -472,6 +441,15 @@ h1:hover + .cursor {
     gap: 20px;
 }
 
+.cultura .section-history p a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.cultura .section-history p a:hover {
+    color: var(--grey);
+}
+
 /* ---ventana modal galeria cultura ---- */
 .modal-carrusel {
     position: fixed;
@@ -573,6 +551,8 @@ h1:hover + .cursor {
     width: 80%;
     max-width: 600px;
     text-align: center;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .modal .close {
@@ -934,6 +914,27 @@ footer {
 }
 
 
+/* -----validacion de formulario---- */
+input.error,
+textarea.error {
+    border-color: red;
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5);
+}
+
+input.valid,
+textarea.valid {
+    border-color: green;
+    box-shadow: 0px 0px 30px rgba(0, 255, 0, 0.5);
+}
+
+.error-message {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: block;
+}
+
+
 
 
 
@@ -993,6 +994,10 @@ footer {
     .footer-form-container {
         width: 100%;
     }
+
+    .row {
+        margin: 20px;
+    }
 }
 
 /* Tablet, large phone: 481-768px */
@@ -1011,15 +1016,6 @@ footer {
         text-align: center;
         padding: 15px 0;
     }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .menu.open {
-        display: flex;
-    }
-
 
     .gallery-cultura {
         grid-template-columns: repeat(2, 1fr);
@@ -1057,6 +1053,12 @@ footer {
     .footer-form-container {
         width: 100%;
     }
+
+    .column {
+        flex: 75%;
+    }
+
+
 }
 
 /* Laptop, large tablet: 769-1279px */
@@ -1078,23 +1080,3 @@ footer {
         justify-content: space-around;
     }
 }
-
-/* Large Desktops: 1280px and up */
-/* @media (min-width: 1280px) {
-    .gallery-cultura {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .timeline {
-        padding: 60px;
-    }
-
-    .container {
-        width: 50%;
-    }
-
-    .footer-content {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-} */
