@@ -227,13 +227,13 @@ h1:hover + .cursor {
 
 #next{
     position: absolute;
-    right: 300px;
+    right: 100px;
     top: 40%;
 }
 
 #prev{
     position: absolute;
-    left: 300px;
+    left: 100px;
     top: 40%;
 }
 
@@ -246,6 +246,7 @@ h1:hover + .cursor {
     font-weight: bold;
     opacity: 0.5;
     transition: opacity 0.5s;
+    z-index: 1;
 }
 #prev:hover,
 #next:hover{
@@ -553,7 +554,7 @@ h1:hover + .cursor {
     width: 80%;
     max-width: 600px;
     text-align: center;
-    margin: 0;
+    margin: 20%;
     box-sizing: border-box;
 }
 
@@ -863,6 +864,12 @@ footer {
     width: 100%;
     margin-top: 5px;
     border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.column img:hover {
+    transform: scale(1.05)
+    
 }
 
 .fondogallery {
@@ -1101,13 +1108,14 @@ textarea.valid {
 /* Tablet, large phone*/
 @media (max-width: 768px) {
     .menu {
-        display: none;
-        flex-direction: column;
-        background: var(--black);
-        position: absolute;
+        /* display: none; */
+        /* flex-direction: column; */
+        /* background: var(--black); */
+        /* position: absolute; */
         top: 60px;
         right: 0;
         width: 100%;
+        justify-content: center;
     }
 
     .menu li {
@@ -1141,6 +1149,10 @@ textarea.valid {
         display: flex;
         flex-direction: column;
         gap: 100px;
+    }
+
+    .modal-content {
+        margin: 10%;
     }
 
     .footer-content {
